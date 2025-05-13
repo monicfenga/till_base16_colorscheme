@@ -1,0 +1,144 @@
+/* 截取自 https://github.com/Rotekoppen/web16 */
+.bg-base00 {
+  background-color: var(--base00)
+}
+
+.bg-base01 {
+  background-color: var(--base01)
+}
+
+.bg-base02 {
+  background-color: var(--base02)
+}
+
+.bg-base03 {
+  background-color: var(--base03)
+}
+
+.bg-base04 {
+  background-color: var(--base04)
+}
+
+.bg-base05 {
+  background-color: var(--base05)
+}
+
+.bg-base06 {
+  background-color: var(--base06)
+}
+
+.bg-base07 {
+  background-color: var(--base07)
+}
+
+.bg-base08 {
+  background-color: var(--base08)
+}
+
+.bg-base09 {
+  background-color: var(--base09)
+}
+
+.bg-base0A {
+  background-color: var(--base0A)
+}
+
+.bg-base0B {
+  background-color: var(--base0B)
+}
+
+.bg-base0C {
+  background-color: var(--base0C)
+}
+
+.bg-base0D {
+  background-color: var(--base0D)
+}
+
+.bg-base0E {
+  background-color: var(--base0E)
+}
+
+.bg-base0F {
+  background-color: var(--base0F)
+}
+
+.fg-base00,
+.text-base00 {
+  color: var(--base00)
+}
+
+.fg-base01,
+.text-base01 {
+  color: var(--base01)
+}
+
+.fg-base02,
+.text-base02 {
+  color: var(--base02)
+}
+
+.fg-base03,
+.text-base03 {
+  color: var(--base03)
+}
+
+.fg-base04,
+.text-base04 {
+  color: var(--base04)
+}
+
+.fg-base05,
+.text-base05 {
+  color: var(--base05)
+}
+
+.fg-base06,
+.text-base06 {
+  color: var(--base06)
+}
+
+.fg-base07,
+.text-base07 {
+  color: var(--base07)
+}
+
+.fg-base08,
+.text-base08 {
+  color: var(--base08)
+}
+
+.fg-base09,
+.text-base09 {
+  color: var(--base09)
+}
+
+.fg-base0A,
+.text-base0A {
+  color: var(--base0A)
+}
+
+.fg-base0B,
+.text-base0B {
+  color: var(--base0B)
+}
+
+.fg-base0C,
+.text-base0C {
+  color: var(--base0C)
+}
+
+.fg-base0D,
+.text-base0D {
+  color: var(--base0D)
+}
+
+.fg-base0E,
+.text-base0E {
+  color: var(--base0E)
+}
+
+.fg-base0F,
+.text-base0F {
+  color: var(--base0F)
+}

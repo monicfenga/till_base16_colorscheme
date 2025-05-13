@@ -1,0 +1,2090 @@
+/* Theme Base16 - One theme fits most Bootstrap */
+
+/* bootstrap */
+:root {
+    --bs-gray-100: var(--base07);
+    --bs-gray-200: var(--base07);
+    --bs-gray-300: var(--base06);
+    --bs-gray-400: var(--base05);
+    --bs-gray-500: var(--base04);
+    --bs-gray-600: var(--base03);
+    --bs-gray-700: var(--base02);
+    --bs-gray-800: var(--base01);
+    --bs-gray-900: var(--base00);
+
+    --bs-blue: var(--base0D);
+    --bs-indigo: var(--base0D);
+    --bs-purple: var(--base0E);
+    --bs-pink: var(--base0F);
+    --bs-red: var(--base08);
+    --bs-orange: var(--base09);
+    --bs-yellow: var(--base0A);
+    --bs-green: var(--base0B);
+    --bs-teal: var(--base0C);
+    --bs-cyan: var(--base0C);
+    --bs-white: #fff;
+    --bs-black: #000;
+    --bs-gray: var(--base07);
+    --bs-gray-dark: var(--base04);
+    --bs-primary: var(--base0D);
+    --bs-secondary: var(--base04);
+    --bs-info: var(--base0C);
+    --bs-success: var(--base0B);
+    --bs-warning: var(--base0A);
+    --bs-danger: var(--base08);
+    --bs-light: var(--base07);
+    --bs-dark: var(--base00);
+
+    --blue: var(--bs-blue);
+    --indigo: var(--bs-indigo);
+    --purple: var(--bs-purple);
+    --pink: var(--bs-pink);
+    --red: var(--bs-red);
+    --orange: var(--bs-orange);
+    --yellow: var(--bs-yellow);
+    --green: var(--bs-green);
+    --teal: var(--bs-teal);
+    --cyan: var(--bs-cyan);
+    --white: var(--bs-white);
+    --black: var(--bs-black);
+    --gray: var(--bs-gray);
+    --gray-dark: var(--bs-gray);
+    --primary: var(--bs-primary);
+    --secondary: var(--bs-secondary);
+    --success: var(--bs-success);
+    --info: var(--bs-info);
+    --warning: var(--bs-warning);
+    --danger: var(--bs-danger);
+    --light: var(--bs-light);
+    --dark: var(--bs-dark);
+
+    --bs-body-color: var(--base05);
+    --bs-body-background-color: var(--base00);
+    --bs-body-color-bright: #var(--base06);
+}
+
+
+::selection {
+    color: var(--bs-selection-fg, var(--base06));
+    background-color: var(--bs-selection-bg, var(--base02));
+}
+
+::moz-selection {
+    color: var(--bs-selection-fg, var(--base06));
+    background-color: var(--bs-selection-bg, var(--base02));
+}
+
+.modal-backdrop {
+    background-color: var(--base00);
+}
+
+body {
+    background-color: var(--bs-body-background-color, var(--base00));
+    color: var(--bs-body-color, var(--base05));
+    font-family: var(--bs-body-font-family);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--bs-body-color-bright, var(--base06, var(--bs-body-color)));
+}
+
+:not(.message) .h1,
+:not(.message) .h2,
+:not(.message) .h3,
+:not(.message) .h4,
+:not(.message) .h5,
+:not(.message) .h6,
+:not(.message) h1,
+:not(.message) h2,
+:not(.message) h3,
+:not(.message) h4,
+:not(.message) h5,
+:not(.message) h6 {
+    font-weight: 300;
+}
+
+.display-1 {
+    font-size: 3.4rem;
+}
+
+.display-2 {
+    font-size: 2.8rem;
+}
+
+.display-3 {
+    font-size: 2.5rem;
+}
+
+.display-4 {
+    font-size: 2.2rem;
+}
+
+
+h1,
+.h1,
+.fs-1 {
+    font-size: 1.7rem;
+}
+
+h2,
+.h2,
+.fs-2 {
+    font-size: 1.5rem;
+}
+
+h3,
+.h3,
+.fs-3 {
+    font-size: 1.4rem;
+}
+
+h4,
+.h4,
+.fs-4 {
+    font-size: 1.3rem;
+}
+
+h5,
+.h5,
+.fs-5 {
+    font-size: 1.2rem;
+}
+
+h6,
+.h6,
+.fs-6 {
+    font-size: 1.1rem;
+}
+
+a,
+a:hover,
+.teme .poruka .naziv a {
+    color: var(--bs-primary);
+}
+
+mark {
+    color: var(--bs-black);
+    background-color: var(--base0A);
+}
+
+pre,
+code,
+kbd,
+samp {
+    background-color: inherit;
+    font-family: var(--font-family-monospace);
+}
+
+fieldset.debug,
+fieldset.notice,
+.card,
+.jumbotron,
+.media.rounded,.header.text-center,
+.lh-100.rounded,
+#timeline:not(.container),
+.modal-content,
+.offcanvas,
+.form-control,
+.form-select,
+.custom-select,
+.input-group-text,
+.dropdown-menu,
+.tab-content,
+.accordion-item,
+.dropdown-menu,
+.nav-align-top>.tab-content,
+.nav-align-right>.tab-content,
+.nav-align-bottom>.tab-content,
+.nav-align-left>.tab-content {
+    background-color: var(--bs-container-background-color);
+    color: var(--bs-body-color);
+    /*box-shadow: initial;*/
+}
+.bg-white.rounded.box-shadow {
+    background-color: var(--bs-container-background-color) !important;
+    color: var(--bs-body-color);
+}
+.jumbotron-fluid > .container > h1.display-4 > i {
+    display: block;
+}
+.jumbotron-fluid > .container > h1 {
+    color: var(--bs-white);
+}
+hr,
+.form-control,
+.dropdown-divider,
+.card,
+.input-group-text,
+.form-select,
+.custom-select,
+.list-group-item,
+.nav-align-top .nav-tabs .nav-item:not(:first-child) .nav-link,
+.table *,
+.border,
+.border-top,
+.border-bottom,
+.border-left,
+.border-right,
+.border-start,
+.border-end {
+    border-color: var(--base03);
+}
+
+.nav-tabs {
+    border-color: var(--base01);
+}
+
+.nav-tabs .nav-link {
+    /*background-color: var(--base01);*/
+    color: var(--bs-body-color);
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus,
+.nav-pills .nav-link:hover,
+.nav-pills .nav-link:focus,
+.card-header-tabs>.nav-item>.nav-link:hover:not(.active) {
+    color: var(--bs-primary);
+    border-color: var(--base01);
+    filter: brightness(1.05);
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link,
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link,
+.card-header-tabs>.nav-item>.nav-link.active {
+    background-color: var(--bs-primary);
+    color: var(--bs-primary-fg);
+    background-image: none;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link,
+.card-header-tabs>.nav-item>.nav-link.active {
+    box-shadow: 0 -.1em 0 var(--bs-primary) inset;
+    color: var(--bs-primary);
+    background-color: var(--base01);
+    border-color: var(--base01);
+}
+
+.card-header-tabs>.nav-item>.nav-link.active::after {
+    background-color: transparent;
+}
+
+.nav-tabs .nav-link.disabled,
+.nav-pills .nav-link.disabled {
+    color: var(--base03);
+}
+
+.list-group-item {
+    background-color: transparent;
+    border-color: var(--base01);
+    color: var(--bs-body-color);
+}
+
+.list-group-item-action:focus,
+.list-group-item-action:hover {
+    background-color: transparent;
+    color: var(--bs-primary);
+    border-color: var(--base01);
+}
+
+.list-group-item.active {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: var(--bs-primary-fg);
+    font-weight: bolder;
+}
+
+.layout-navbar {
+    background-color: var(--base01) !important;
+}
+
+.dropdown-item,
+.dropdown-item a {
+    color: var(--bs-body-color);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: var(--bs-primary-fg);
+    background-color: var(--bs-primary);
+}
+
+.dropdown-item.active a,
+.dropdown-item:active a {
+    color: var(--bs-primary-fg);
+}
+
+.dropdown-item.active:hover a {
+    color: var(--bs-primary);
+}
+
+.dropdown-item.text-muted {
+    color: var(--bs-body-color) !important;
+
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: var(--base01);
+    color: var(--bs-primary);
+}
+
+.dropdown-item.text-muted:focus,
+.dropdown-item.text-muted:hover {
+    color: var(--bs-primary) !important;
+}
+
+.card .thread-left-nav.flex-column:not(.nav-sidebar)>li:hover,
+.forumList>li:hover {
+    background-color: var(--base01);
+    color: var(--bs-primary);
+}
+
+.goTop {
+    background-color: var(--base01);
+    color: var(--bs-primary);
+}
+
+.page-link,
+.form-check-input {
+    color: var(--base05);
+    background-color: transparent;
+    border-color: var(--base03);
+}
+
+.page-link:hover {
+    color: var(--bs-primary);
+    background-color: var(--base02);
+    border-color: var(--bs-primary);
+}
+
+.page-item.active .page-link {
+    color: var(--bs-primary-fg);
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.page-item.disabled .page-link {
+    background-color: transparent;
+    color: var(--base05);
+    border-color: var(--base01);
+}
+
+.modal .btn-close,
+.modal .close {
+    color: var(--base05);
+    background-color: var(--base01);
+}
+
+.table {
+    color: var(--bs-body-color);
+}
+
+.table thead th,
+.table th {
+    color: var(--bs-body-color-bright);
+
+}
+
+.table thead th,
+.table td,
+.table th {
+    border-color: var(--base03);
+}
+
+code {
+    color: var(--base0E);
+}
+
+
+.form-control::-webkit-input-placeholder {
+    color: var(--base04);
+}
+
+.form-control:focus::-webkit-input-placeholder {
+    color: var(--base03);
+}
+
+.card>.card-header,
+.card>.card-footer {
+    border-color: var(--base01);
+    background-color: transparent;
+    background-image: none;
+    color: inherit;
+}
+
+.card,
+.thread,
+.post {
+    border-color: var(--base01);
+}
+
+.shee,
+.thread,
+.post {
+    background-color: transparent !important;
+}
+
+.thread:hover,
+.thread:focus-within {
+    background-color: transparent;
+    filter: brightness(1.05);
+}
+
+.shee-txt-z {
+    color: var(--bs-body-color);
+}
+
+.card hr {
+    border-color: var(--base02);
+}
+
+.layout-menu {
+    box-shadow: 0 0 0 1px var(--base02) !important;
+}
+
+.breadcrumb,
+.breadcrumb:hover {
+    background-color: transparent !important;
+    border-color: var(--base02);
+    box-shadow: none;
+}
+
+.btn {
+    transition: all 0.08s ease-out;
+}
+
+.btn:hover,
+.btn:focus {
+    transform: scale(1.02);
+    box-shadow: initial;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    filter: brightness(0.9);
+}
+
+.btn:active:focus {
+    box-shadow: initial !important;
+
+}
+
+.form-control:focus,
+.form-control:focus:hover {
+    border-color: var(--bs-primary);
+    background-color: var(--base00);
+    color: var(--bs-body-color-bright);
+    box-shadow: initial;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: var(--base01);
+    color: var(--base04);
+}
+
+.alert-primary {
+    background-color: var(--base01);
+}
+
+.text-white {
+    color: var(--white) !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
+}
+
+.text-success {
+    color: var(--success) !important;
+}
+
+.text-info {
+    color: var(--info) !important;
+}
+
+.text-warning {
+    color: var(--warning) !important;
+}
+
+.text-danger {
+    color: var(--danger) !important;
+}
+
+.text-light {
+    color: var(--light) !important;
+}
+
+.text-dark {
+    color: var(--dark) !important;
+}
+
+.text-grey,
+.text-gray {
+    color: var(--base03) !important;
+}
+
+.text-body {
+    color: var(--bs-body-color) !important;
+}
+
+.text-muted,
+.text-black-50,
+.text-white-50 {
+    color: var(--bs-body-muted-color, var(--base03)) !important;
+}
+
+.text-white {
+    color: var(--white) !important;
+}
+
+.progress {
+    background-color: var(--base03);
+}
+
+.progress-bar {
+    background-color: var(--primary);
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.bg-success {
+    background-color: var(--success) !important;
+}
+
+.bg-info {
+    background-color: var(--info) !important;
+}
+
+.bg-warning {
+    background-color: var(--warning) !important;
+}
+
+.bg-danger {
+    background-color: var(--danger) !important;
+}
+
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+.bg-dark {
+    background-color: var(--dark) !important;
+}
+
+.admin {
+    color: var(--warning) !important
+}
+
+.worker {
+    color: var(--info) !important
+}
+
+.user {
+    color: inherit;
+}
+
+.alert-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+    background-color: transparent;
+}
+
+.alert-secondary {
+    color: var(--secondary);
+    border-color: var(--secondary);
+    background-color: transparent;
+}
+
+.alert-success {
+    color: var(--success);
+    border-color: var(--success);
+    background-color: transparent;
+}
+
+.alert-info {
+    color: var(--info);
+    border-color: var(--info);
+    background-color: transparent;
+}
+
+.alert-warning {
+    color: var(--warning);
+    border-color: var(--warning);
+    background-color: transparent;
+}
+
+.alert-danger {
+    color: var(--danger);
+    border-color: var(--danger);
+    background-color: transparent;
+}
+
+.main-sidebar {
+    box-shadow: none !important;
+    border-right: 1px solid var(--base01);
+}
+
+[class*=sidebar-dark-] {
+    background-color: var(--base01) !important;
+}
+.navbar-dark,
+.navbar-dark.bg-dark,
+.navbar.navbar-light:not(.bg-primary):not(.bg-secondary):not(.bg-success):not(.bg-info):not(.bg-warning):not(.bg-danger):not(.bg-light):not(.bg-dark),
+.navbar-light.bg-light,
+.navbar-dark.bg-light,
+#nav_pc_2,
+.navbar-light.bg-dark,
+.navbar-inverse,
+.navbar-white {
+    background-color: var(--bs-navbar-background-color, var(--base01)) !important;
+}
+
+
+footer.bg-dark,
+footer.bg-light,
+.footer.bg-dark,
+.footer.bg-light {
+    background-color: var(--base01) !important;
+}
+
+.navbar-primary {
+    background-color: var(--bs-navbar-background-color, var(--bs-primary));
+}
+
+.navbar-secondary {
+    background-color: var(--bs-navbar-background-color, var(--bs-secondary));
+}
+
+.navbar-success {
+    background-color: var(--bs-navbar-background-color, var(--bs-success));
+}
+
+.navbar-danger {
+    background-color: var(--bs-navbar-background-color, var(--bs-danger));
+}
+
+.navbar-warning {
+    background-color: var(--bs-navbar-background-color, var(--bs-warning));
+}
+
+.navbar-info {
+    background-color: var(--bs-navbar-background-color, var(--bs-info));
+}
+
+[class*=sidebar-dark] .brand-link,
+[class*=sidebar-dark] .brand-link .pushmenu,
+.navbar-light .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link,
+.navbar-white .navbar-nav .nav-link,
+#nav_pc_2 .nav .nav-link,
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show>.nav-link .footer {
+    color: var(--bs-navbar-color, var(--bs-body-color)) !important;
+}
+
+footer {
+    color: var(--bs-body-color);
+}
+
+.MobilemenuBtn {
+    color: var(--bs-body-color);
+}
+
+.navbar-white .navbar-nav .active>.nav-link,
+.navbar-white .navbar-brand,
+.navbar.navbar-white .nav-link:focus,
+.navbar.navbar-white .nav-link.active .navbar-light .navbar-nav .active>.nav-link,
+#nav_pc_2 .nav .active>.nav-link,
+#nav_pc_2 .navbar-brand,
+.navbar-light .navbar-brand,
+.navbar.navbar-light .nav-link:focus,
+.navbar.navbar-light .nav-link.active {
+    color: var(--bs-navbar-color, var(--bs-primary));
+}
+
+#nav_pc_2 .active a {
+    background-color: var(--bs-body-muted-color);
+}
+
+#mobile_nav .navbar-nav .nav-link {
+    background-color: var(--base00);
+}
+
+.navbar-nav>.nav-item>.nav-link>.iconfont {
+    background-color: var(--base03);
+}
+
+.thread_left_func {
+    background-color: var(--base01);
+}
+
+.forumlist-bg {
+    background-color: var(--base00) !important;
+}
+
+.navbar h5 {
+    color: var(--bs-body-color-bright);
+}
+
+[class*=sidebar-dark-] .sidebar a {
+    color: var(--bs-secondary);
+}
+
+[class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open>.nav-link,
+[class*=sidebar-dark-] .nav-sidebar>.nav-item:hover>.nav-link,
+[class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-link:focus,
+.navbar.navbar-dark .nav-link:hover,
+.navbar.navbar-light .nav-link:hover,
+#nav_pc_2 .nav .nav-link:hover {
+    color: var(--bs-navbar-color, var(--bs-primary));
+    opacity: 0.8;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link,
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link:focus,
+.navbar-dark .active .nav-link {
+    color: var(--bs-navbar-color, var(--bs-body-color-bright)) !important;
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-dark .navbar-brand:hover,
+.navbar-dark .navbar-brand:focus {
+    color: var(--bs-navbar-color,var(--bs-primary)) !important;
+    opacity: 0.8;
+}
+
+.navbar-primary .nav-link:focus,
+.navbar-primary .nav-link.active,
+.navbar.bg-primary .active .nav-link {
+    color: var(--bs-primary-fg, var(--bs-white));
+    font-weight: 600;
+}
+
+.navbar-secondary .nav-link:focus,
+.navbar-secondary .nav-link.active,
+.navbar.bg-secondary .active .nav-link {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    font-weight: 600;
+}
+
+.navbar-success .nav-link:focus,
+.navbar-success .nav-link.active,
+.navbar.bg-success .active .nav-link {
+    color: var(--bs-success-fg, var(--bs-white));
+    font-weight: 600;
+}
+
+.navbar-danger .nav-link:focus,
+.navbar-danger .nav-link.active,
+.navbar.bg-danger .active .nav-link {
+    color: var(--bs-danger-fg, var(--bs-white));
+    font-weight: 600;
+}
+
+.navbar-warning .nav-link:focus,
+.navbar-warning .nav-link.active,
+.navbar.bg-warning .active .nav-link {
+    color: var(--bs-warning-fg, var(--bs-white));
+    font-weight: 600;
+}
+
+.navbar-info .nav-link:focus,
+.navbar-info .nav-link.active,
+.navbar.bg-info .active .nav-link {
+    color: var(--bs-info-fg, var(--bs-white));
+    font-weight: 600;
+}
+
+.navbar-primary .navbar-brand,
+.navbar.bg-primary .navbar-brand,
+.navbar-primary .nav-link,
+.navbar.bg-primary .nav-link,
+.navbar-primary .nav-link:hover,
+.navbar.bg-primary .nav-link:hover {
+    color: var(--bs-primary-fg, var(--bs-white));
+
+}
+
+.navbar-secondary .navbar-brand,
+.navbar.bg-secondary .navbar-brand,
+.navbar-secondary .nav-link,
+.navbar.bg-secondary .nav-link,
+.navbar-secondary .nav-link:hover,
+.navbar.bg-secondary .nav-link:hover {
+    color: var(--bs-secondary-fg, var(--bs-white));
+
+}
+
+.navbar-success .navbar-brand,
+.navbar.bg-success .navbar-brand,
+.navbar-success .nav-link,
+.navbar.bg-success .nav-link,
+.navbar-success .nav-link:hover,
+.navbar.bg-success .nav-link:hover {
+    color: var(--bs-success-fg, var(--bs-white));
+
+}
+
+.navbar-danger .navbar-brand,
+.navbar.bg-danger .navbar-brand,
+.navbar-danger .nav-link,
+.navbar.bg-danger .nav-link,
+.navbar-danger .nav-link:hover,
+.navbar.bg-danger .nav-link:hover {
+    color: var(--bs-danger-fg, var(--bs-white));
+
+}
+
+.navbar-warning .navbar-brand,
+.navbar.bg-warning .navbar-brand,
+.navbar-warning .nav-link,
+.navbar.bg-warning .nav-link,
+.navbar-warning .nav-link:hover,
+.navbar.bg-warning .nav-link:hover {
+    color: var(--bs-warning-fg, var(--bs-white));
+}
+
+.navbar-info .navbar-brand,
+.navbar.bg-info .navbar-brand,
+.navbar-info .nav-link,
+.navbar.bg-info .nav-link,
+.navbar-info .nav-link:hover,
+.navbar.bg-info .nav-link:hover {
+    color: var(--bs-info-fg, var(--bs-white));
+}
+
+.navbar.navbar-white .nav-link:focus,
+.navbar.navbar-white .nav-link.active .navbar.navbar-dark .nav-link:focus,
+.navbar.navbar-dark .nav-link.active,
+.navbar.navbar-light .nav-link:focus,
+.navbar.navbar-light .nav-link.active,
+#nav_pc_2 .nav .nav-link:focus,
+#nav_pc_2 .nav .nav-link:active {
+    font-weight: 600;
+}
+
+.navbar-white .navbar-brand:hover,
+.navbar-white .navbar-brand:focus .navbar-dark .navbar-brand:hover,
+.navbar-dark .navbar-brand:focus,
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus,
+#nav_pc_2 .navbar-brand:hover,
+#nav_pc_2 .navbar-brand:focus {
+    color: var(--bs-navbar-color,var(--bs-primary));
+    opacity: 0.8;
+}
+
+#nav ul:not(.navbar-nav) li.active a {
+    background-color: var(--bs-primary);
+    color: var(--bs-primary-fg);
+}
+
+.btn-primary {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    box-shadow: initial;
+}
+
+.btn-primary:hover {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+
+}
+
+.btn-check:focus+.btn-primary,
+.btn-primary:focus,
+.btn-primary.focus {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    box-shadow: initial;
+}
+
+.btn-check:checked+.btn-primary,
+.btn-check:active+.btn-primary,
+.btn-primary:active,
+.btn-primary.active,
+.show>.btn-primary.dropdown-toggle,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-check:checked+.btn-primary:focus,
+.btn-check:active+.btn-primary:focus,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: initial;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-primary {
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    box-shadow: initial;
+
+}
+
+.btn-check:focus+.btn-outline-primary,
+.btn-outline-primary:focus {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    box-shadow: initial;
+
+}
+
+.btn-check:checked+.btn-outline-primary,
+.btn-check:active+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.btn-pitline-primary:not(:disabled):not(.disabled).active,
+.btn-pitline-primary:not(:disabled):not(.disabled):active,
+.show>.btn-pitline-primary.dropdown-toggle {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-check:checked+.btn-outline-primary:focus,
+.btn-check:active+.btn-outline-primary:focus,
+.btn-outline-primary:active:focus,
+.btn-outline-primary.active:focus,
+.btn-outline-primary.dropdown-toggle.show:focus {
+    box-shadow: initial;
+}
+
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+    box-shadow: initial;
+    color: inherit
+}
+
+.btn-outline-primary .badge {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: var(--bs-primary-fg, var(--bs-white));
+}
+
+.btn-outline-primary:hover .badge,
+.btn-outline-primary:focus:hover .badge,
+.btn-outline-primary:active .badge,
+.btn-outline-primary.active .badge,
+.show>.btn-outline-primary.dropdown-toggle .badge {
+    background: var(--bs-white);
+    border-color: var(--bs-primary-fg, var(--bs-white));
+    color: var(--bs-primary);
+}
+
+
+.btn-secondary {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    box-shadow: initial;
+}
+
+.mod-button>.btn-secondary {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    box-shadow: initial;
+}
+
+.btn-secondary:hover {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+}
+
+.btn-check:focus+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary.focus {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+
+    box-shadow: initial;
+}
+
+.btn-check:checked+.btn-secondary,
+.btn-check:active+.btn-secondary,
+.btn-secondary:active,
+.btn-secondary.active,
+.show>.btn-secondary.dropdown-toggle,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+}
+
+.btn-check:checked+.btn-secondary:focus,
+.btn-check:active+.btn-secondary:focus,
+.btn-secondary:active:focus,
+.btn-secondary.active:focus,
+.show>.btn-secondary.dropdown-toggle:focus {
+    box-shadow: initial;
+}
+
+.btn-secondary.disabled,
+.btn-secondary:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-secondary {
+    color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    background: transparent;
+}
+
+.btn-outline-secondary:hover {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    box-shadow: initial;
+
+}
+
+.btn-check:focus+.btn-outline-secondary,
+.btn-outline-secondary:focus {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    box-shadow: initial;
+
+}
+
+.btn-check:checked+.btn-outline-secondary,
+.btn-check:active+.btn-outline-secondary,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active,
+.btn-outline-secondary.dropdown-toggle.show,
+.btn-putline-secondary:not(:disabled):not(.disabled).active,
+.btn-putline-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-putline-secondary.dropdown-toggle {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+}
+
+.btn-check:checked+.btn-outline-secondary:focus,
+.btn-check:active+.btn-outline-secondary:focus,
+.btn-outline-secondary:active:focus,
+.btn-outline-secondary.active:focus,
+.btn-outline-secondary.dropdown-toggle.show:focus {
+    box-shadow: initial;
+}
+
+.btn-outline-secondary.disabled,
+.btn-outline-secondary:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-secondary .badge {
+    background: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    color: var(--bs-secondary-fg, var(--bs-white));
+}
+
+.btn-outline-secondary:hover .badge,
+.btn-outline-secondary:focus:hover .badge,
+.btn-outline-secondary:active .badge,
+.btn-outline-secondary.active .badge,
+.show>.btn-outline-secondary.dropdown-toggle .badge {
+    background: var(--bs-white);
+    border-color: var(--bs-secondary-fg, var(--bs-white));
+    color: var(--bs-secondary);
+}
+
+.btn-success {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    box-shadow: initial;
+}
+
+.btn-success:hover {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+
+}
+
+.btn-check:focus+.btn-success,
+.btn-success:focus,
+.btn-success.focus {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+
+    box-shadow: initial;
+}
+
+.btn-check:checked+.btn-success,
+.btn-check:active+.btn-success,
+.btn-success:active,
+.btn-success.active,
+.show>.btn-success.dropdown-toggle,
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.show>.btn-success.dropdown-toggle {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+.btn-check:checked+.btn-success:focus,
+.btn-check:active+.btn-success:focus,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.show>.btn-success.dropdown-toggle:focus {
+    box-shadow: initial;
+}
+
+.btn-success.disabled,
+.btn-success:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-success {
+    color: var(--bs-success);
+    border-color: var(--bs-success);
+    background: transparent;
+}
+
+.btn-outline-success:hover {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    box-shadow: initial;
+
+}
+
+.btn-check:focus+.btn-outline-success,
+.btn-outline-success:focus {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    box-shadow: initial;
+
+}
+
+.btn-check:checked+.btn-outline-success,
+.btn-check:active+.btn-outline-success,
+.btn-outline-success:active,
+.btn-outline-success.active,
+.btn-outline-success.dropdown-toggle.show,
+.btn-outline-success:not(:disabled):not(.disabled).active,
+.btn-outline-success:not(:disabled):not(.disabled):active,
+.show>.btn-outline-success.dropdown-toggle {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+.btn-check:checked+.btn-outline-success:focus,
+.btn-check:active+.btn-outline-success:focus,
+.btn-outline-success:active:focus,
+.btn-outline-success.active:focus,
+.btn-outline-success.dropdown-toggle.show:focus {
+    box-shadow: initial;
+}
+
+.btn-outline-success.disabled,
+.btn-outline-success:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-success .badge {
+    background: var(--bs-success);
+    border-color: var(--bs-success);
+    color: var(--bs-success-fg, var(--bs-white));
+}
+
+.btn-outline-success:hover .badge,
+.btn-outline-success:focus:hover .badge,
+.btn-outline-success:active .badge,
+.btn-outline-success.active .badge,
+.show>.btn-outline-success.dropdown-toggle .badge {
+    background: var(--bs-white);
+    border-color: var(--bs-success-fg, var(--bs-white));
+    color: var(--bs-success);
+}
+
+.btn-info {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+    box-shadow: initial;
+}
+
+.btn-info:hover {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+
+}
+
+.btn-check:focus+.btn-info,
+.btn-info:focus,
+.btn-info.focus {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+
+    box-shadow: initial;
+}
+
+.btn-check:checked+.btn-info,
+.btn-check:active+.btn-info,
+.btn-info:active,
+.btn-info.active,
+.show>.btn-info.dropdown-toggle,
+.btn-info:not(:disabled):not(.disabled).active,
+.btn-info:not(:disabled):not(.disabled):active,
+.show>.btn-info.dropdown-toggle {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+}
+
+.btn-check:checked+.btn-info:focus,
+.btn-check:active+.btn-info:focus,
+.btn-info:active:focus,
+.btn-info.active:focus,
+.show>.btn-info.dropdown-toggle:focus {
+    box-shadow: initial;
+}
+
+.btn-info.disabled,
+.btn-info:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-info {
+    color: var(--bs-info);
+    border-color: var(--bs-info);
+    background: transparent;
+}
+
+.btn-outline-info:hover {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+    box-shadow: initial;
+
+}
+
+.btn-check:focus+.btn-outline-info,
+.btn-outline-info:focus {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+    box-shadow: initial;
+
+}
+
+.btn-check:checked+.btn-outline-info,
+.btn-check:active+.btn-outline-info,
+.btn-outline-info:active,
+.btn-outline-info.active,
+.btn-outline-info.dropdown-toggle.show,
+.btn-outline-info:not(:disabled):not(.disabled).active,
+.btn-outline-info:not(:disabled):not(.disabled):active,
+.show>.btn-outline-info.dropdown-toggle {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+}
+
+.btn-check:checked+.btn-outline-info:focus,
+.btn-check:active+.btn-outline-info:focus,
+.btn-outline-info:active:focus,
+.btn-outline-info.active:focus,
+.btn-outline-info.dropdown-toggle.show:focus {
+    box-shadow: initial;
+}
+
+.btn-outline-info.disabled,
+.btn-outline-info:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-info .badge {
+    background: var(--bs-info);
+    border-color: var(--bs-info);
+    color: var(--bs-info-fg, var(--bs-white));
+}
+
+.btn-outline-info:hover .badge,
+.btn-outline-info:focus:hover .badge,
+.btn-outline-info:active .badge,
+.btn-outline-info.active .badge,
+.show>.btn-outline-info.dropdown-toggle .badge {
+    background: var(--bs-white);
+    border-color: var(--bs-info-fg, var(--bs-white));
+    color: var(--bs-info);
+}
+
+.btn-warning {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--warning);
+    border-color: var(--warning);
+    box-shadow: initial;
+}
+
+.btn-warning:hover {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--warning);
+    border-color: var(--warning);
+
+}
+
+.btn-check:focus+.btn-warning,
+.btn-warning:focus,
+.btn-warning.focus {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--warning);
+    border-color: var(--warning);
+
+    box-shadow: initial;
+}
+
+.btn-check:checked+.btn-warning,
+.btn-check:active+.btn-warning,
+.btn-warning:active,
+.btn-warning.active,
+.show>.btn-warning.dropdown-toggle,
+.btn-warning:not(:disabled):not(.disabled).active,
+.btn-warning:not(:disabled):not(.disabled):active,
+.show>.btn-warning.dropdown-toggle {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--warning);
+    border-color: var(--warning);
+}
+
+.btn-check:checked+.btn-warning:focus,
+.btn-check:active+.btn-warning:focus,
+.btn-warning:active:focus,
+.btn-warning.active:focus,
+.show>.btn-warning.dropdown-toggle:focus {
+    box-shadow: initial;
+}
+
+.btn-warning.disabled,
+.btn-warning:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-warning {
+    color: var(--warning);
+    border-color: var(--warning);
+    background: transparent;
+}
+
+.btn-outline-warning:hover {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--warning);
+    border-color: var(--warning);
+    box-shadow: initial;
+
+}
+
+.btn-check:focus+.btn-outline-warning,
+.btn-outline-warning:focus {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--warning);
+    border-color: var(--warning);
+    box-shadow: initial;
+
+}
+
+.btn-check:checked+.btn-outline-warning,
+.btn-check:active+.btn-outline-warning,
+.btn-outline-warning:active,
+.btn-outline-warning.active,
+.btn-outline-warning.dropdown-toggle.show,
+.btn-outline-warning:not(:disabled):not(.disabled).active,
+.btn-outline-warning:not(:disabled):not(.disabled):active,
+.show>.btn-outline-warning.dropdown-toggle {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--warning);
+    border-color: var(--warning);
+}
+
+.btn-check:checked+.btn-outline-warning:focus,
+.btn-check:active+.btn-outline-warning:focus,
+.btn-outline-warning:active:focus,
+.btn-outline-warning.active:focus,
+.btn-outline-warning.dropdown-toggle.show:focus {
+    box-shadow: initial;
+}
+
+.btn-outline-warning.disabled,
+.btn-outline-warning:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-warning .badge {
+    background: var(--warning);
+    border-color: var(--warning);
+    color: var(--bs-warning-fg, var(--bs-white));
+}
+
+.btn-outline-warning:hover .badge,
+.btn-outline-warning:focus:hover .badge,
+.btn-outline-warning:active .badge,
+.btn-outline-warning.active .badge,
+.show>.btn-outline-warning.dropdown-toggle .badge {
+    background: var(--bs-white);
+    border-color: var(--bs-warning-fg, var(--bs-white));
+    color: var(--warning);
+}
+
+.btn-danger {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    box-shadow: initial;
+}
+
+.btn-danger:hover {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+
+}
+
+.btn-check:focus+.btn-danger,
+.btn-danger:focus,
+.btn-danger.focus {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+
+    box-shadow: initial;
+}
+
+.btn-check:checked+.btn-danger,
+.btn-check:active+.btn-danger,
+.btn-danger:active,
+.btn-danger.active,
+.show>.btn-danger.dropdown-toggle .btn-danger:not(:disabled):not(.disabled).active,
+.btn-danger:not(:disabled):not(.disabled):active,
+.show>.btn-danger.dropdown-toggle {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+
+.btn-check:checked+.btn-danger:focus,
+.btn-check:active+.btn-danger:focus,
+.btn-danger:active:focus,
+.btn-danger.active:focus,
+.show>.btn-danger.dropdown-toggle:focus {
+    box-shadow: initial;
+}
+
+.btn-danger.disabled,
+.btn-danger:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-danger {
+    color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    background: transparent;
+}
+
+.btn-outline-danger:hover {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    box-shadow: initial;
+
+}
+
+.btn-check:focus+.btn-outline-danger,
+.btn-outline-danger:focus {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    box-shadow: initial;
+
+}
+
+.btn-check:checked+.btn-outline-danger,
+.btn-check:active+.btn-outline-danger,
+.btn-outline-danger:active,
+.btn-outline-danger.active,
+.btn-outline-danger.dropdown-toggle.show,
+.btn-outline-danger:not(:disabled):not(.disabled).active,
+.btn-outline-danger:not(:disabled):not(.disabled):active,
+.show>.btn-outline-danger.dropdown-toggle {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+
+.btn-check:checked+.btn-outline-danger:focus,
+.btn-check:active+.btn-outline-danger:focus,
+.btn-outline-danger:active:focus,
+.btn-outline-danger.active:focus,
+.btn-outline-danger.dropdown-toggle.show:focus {
+    box-shadow: initial;
+}
+
+.btn-outline-danger.disabled,
+.btn-outline-danger:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-danger .badge {
+    background: var(--bs-danger);
+    border-color: var(--bs-danger);
+    color: var(--bs-danger-fg, var(--bs-white));
+}
+
+.btn-outline-danger:hover .badge,
+.btn-outline-danger:focus:hover .badge,
+.btn-outline-danger:active .badge,
+.btn-outline-danger.active .badge,
+.show>.btn-outline-danger.dropdown-toggle .badge {
+    background: var(--bs-white);
+    border-color: var(--bs-danger-fg, var(--bs-white));
+    color: var(--bs-danger);
+}
+
+.btn-light {
+    color: var(--base00);
+    background-color: var(--base06);
+    border-color: var(--base06);
+    box-shadow: initial;
+}
+
+.btn-light:hover {
+    color: var(--base00);
+    background-color: var(--base06);
+    border-color: var(--base06);
+
+}
+
+.btn-check:focus+.btn-light,
+.btn-light:focus,
+.btn-light.focus {
+    color: var(--base01);
+    background-color: var(--base06);
+    border-color: var(--base06);
+
+    box-shadow: initial;
+}
+
+.btn-check:checked+.btn-light,
+.btn-check:active+.btn-light,
+.btn-light:active,
+.btn-light.active,
+.show>.btn-light.dropdown-toggle {
+    color: var(--base01);
+    background-color: var(--base06);
+    border-color: var(--base06);
+}
+
+.btn-check:checked+.btn-light:focus,
+.btn-check:active+.btn-light:focus,
+.btn-light:active:focus,
+.btn-light.active:focus,
+.show>.btn-light.dropdown-toggle:focus {
+    box-shadow: initial;
+}
+
+.btn-light.disabled,
+.btn-light:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-light {
+    color: var(--base06);
+    border-color: var(--base06);
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    color: var(--base01);
+    background-color: var(--base06);
+    border-color: var(--base06);
+    box-shadow: initial;
+
+}
+
+.btn-check:focus+.btn-outline-light,
+.btn-outline-light:focus {
+    color: var(--base01);
+    background-color: var(--base06);
+    border-color: var(--base06);
+    box-shadow: initial;
+
+}
+
+.btn-check:checked+.btn-outline-light,
+.btn-check:active+.btn-outline-light,
+.btn-outline-light:active,
+.btn-outline-light.active,
+.btn-outline-light.dropdown-toggle.show {
+    color: var(--base01);
+    background-color: var(--base06);
+    border-color: var(--base06);
+}
+
+.btn-check:checked+.btn-outline-light:focus,
+.btn-check:active+.btn-outline-light:focus,
+.btn-outline-light:active:focus,
+.btn-outline-light.active:focus,
+.btn-outline-light.dropdown-toggle.show:focus {
+    box-shadow: initial;
+}
+
+.btn-outline-light.disabled,
+.btn-outline-light:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-light .badge {
+    background: var(--base06);
+    border-color: var(--base06);
+    color: var(--base00);
+}
+
+.btn-outline-light:hover .badge,
+.btn-outline-light:focus:hover .badge,
+.btn-outline-light:active .badge,
+.btn-outline-light.active .badge,
+.show>.btn-outline-light.dropdown-toggle .badge {
+    background: var(--base06);
+    border-color: var(--base06);
+    color: var(--base00);
+}
+
+.btn-dark {
+    color: var(--base06);
+    background-color: var(--base01);
+    border-color: var(--base01);
+    box-shadow: initial;
+}
+
+.btn-dark:hover {
+    color: var(--base06);
+    background-color: var(--base01);
+    border-color: var(--base01);
+
+}
+
+.btn-check:focus+.btn-dark,
+.btn-dark:focus,
+.btn-dark.focus {
+    color: var(--base06);
+    background-color: var(--base01);
+    border-color: var(--base01);
+
+    box-shadow: initial;
+}
+
+.btn-check:checked+.btn-dark,
+.btn-check:active+.btn-dark,
+.btn-dark:active,
+.btn-dark.active,
+.show>.btn-dark.dropdown-toggle {
+    color: var(--base06);
+    background-color: var(--base01);
+    border-color: var(--base01);
+}
+
+.btn-check:checked+.btn-dark:focus,
+.btn-check:active+.btn-dark:focus,
+.btn-dark:active:focus,
+.btn-dark.active:focus,
+.show>.btn-dark.dropdown-toggle:focus {
+    box-shadow: initial;
+}
+
+.btn-dark.disabled,
+.btn-dark:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-dark {
+    color: var(--base01);
+    border-color: var(--base01);
+    background: transparent;
+}
+
+.btn-outline-dark:hover {
+    color: var(--base06);
+    background-color: var(--base01);
+    border-color: var(--base01);
+    box-shadow: initial;
+
+}
+
+.btn-check:focus+.btn-outline-dark,
+.btn-outline-dark:focus {
+    color: var(--base06);
+    background-color: var(--base01);
+    border-color: var(--base01);
+    box-shadow: initial;
+
+}
+
+.btn-check:checked+.btn-outline-dark,
+.btn-check:active+.btn-outline-dark,
+.btn-outline-dark:active,
+.btn-outline-dark.active,
+.btn-outline-dark.dropdown-toggle.show {
+    color: var(--base06);
+    background-color: var(--base01);
+    border-color: var(--base01);
+}
+
+.btn-check:checked+.btn-outline-dark:focus,
+.btn-check:active+.btn-outline-dark:focus,
+.btn-outline-dark:active:focus,
+.btn-outline-dark.active:focus,
+.btn-outline-dark.dropdown-toggle.show:focus {
+    box-shadow: initial;
+}
+
+.btn-outline-dark.disabled,
+.btn-outline-dark:disabled {
+    box-shadow: initial;
+}
+
+.btn-outline-dark .badge {
+    background: var(--base01);
+    border-color: var(--base01);
+    color: var(--base06);
+}
+
+.btn-outline-dark:hover .badge,
+.btn-outline-dark:focus:hover .badge,
+.btn-outline-dark:active .badge,
+.btn-outline-dark.active .badge,
+.show>.btn-outline-dark.dropdown-toggle .badge {
+    background: var(--base06);
+    border-color: var(--base06);
+    color: var(--base01);
+}
+
+.bg-label-primary {
+    background-color: var(--base01) !important;
+    color: var(--primary) !important;
+}
+
+.bg-label-secondary {
+    background-color: var(--base01) !important;
+    color: var(--secondary) !important;
+}
+
+.bg-label-success {
+    background-color: var(--base01) !important;
+    color: var(--success) !important;
+}
+
+
+.bg-label-info {
+    background-color: var(--base01) !important;
+    color: var(--info) !important;
+}
+
+.bg-label-warning {
+    background-color: var(--base01) !important;
+    color: var(--warning) !important;
+}
+
+.bg-label-danger {
+    background-color: var(--base01) !important;
+    color: var(--danger) !important;
+}
+
+.bg-label-light {
+    background-color: var(--base01) !important;
+    color: var(--light) !important;
+}
+
+.bg-label-dark {
+    background-color: var(--base01) !important;
+    color: var(--dark) !important;
+}
+
+
+.badge-primary {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary)
+}
+
+a.badge-primary:focus,
+a.badge-primary:hover {
+    color: var(--bs-primary-fg, var(--bs-white));
+    background-color: var(--bs-primary)
+}
+
+.badge-secondary {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary)
+}
+
+a.badge-secondary:focus,
+a.badge-secondary:hover {
+    color: var(--bs-secondary-fg, var(--bs-white));
+    background-color: var(--bs-secondary)
+}
+
+.badge-success {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success)
+}
+
+a.badge-success:focus,
+a.badge-success:hover {
+    color: var(--bs-success-fg, var(--bs-white));
+    background-color: var(--bs-success)
+}
+
+.badge-info {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info)
+}
+
+a.badge-info:focus,
+a.badge-info:hover {
+    color: var(--bs-info-fg, var(--bs-white));
+    background-color: var(--bs-info)
+}
+
+.badge-warning {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--bs-warning)
+}
+
+a.badge-warning:focus,
+a.badge-warning:hover {
+    color: var(--bs-warning-fg, var(--bs-white));
+    background-color: var(--bs-warning)
+}
+
+.badge-danger {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger)
+}
+
+a.badge-danger:focus,
+a.badge-danger:hover {
+    color: var(--bs-danger-fg, var(--bs-white));
+    background-color: var(--bs-danger)
+}
+
+.badge-light {
+    color: var(--bs-dark);
+    background-color: var(--bs-light)
+}
+
+a.badge-light:focus,
+a.badge-light:hover {
+    color: var(--bs-dark);
+    background-color: var(--bs-light)
+}
+
+.badge-dark {
+    color: var(--bs-white);
+    background-color: var(--bs-dark)
+}
+
+a.badge-dark:focus,
+a.badge-dark:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-dark)
+}
+
+.noticelist>.notice .message .quote-comment {
+    color: var(--bs-info);
+}
+
+.noticelist>.notice .message .single-comment a,
+.noticelist>.notice .message .reply-comment a {
+    color: var(--bs-body);
+}
+
+/* 代码高亮 */
+
+/* background */
+pre.prettyprinted,
+pre {
+    background-color: var(--base00);
+    padding: .5em 1em;
+    border-radius: .5em;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+pre ::selection {
+    background-color: var(--base02);
+    color: var(--base06);
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--base01)
+}
+
+/* plaintext */
+pre.prettyprinted,
+pre,
+pre .pln {
+    color: var(--base05);
+}
+
+/* string */
+pre .str {
+    color: var(--base0B)
+}
+
+/* keyword */
+pre .kwd {
+    font-style: italic;
+    color: var(--base0E)
+}
+
+/* comment */
+pre .com {
+    font-style: italic;
+    color: var(--base03)
+}
+
+/* type */
+pre .typ {
+    color: var(--base0A)
+}
+
+/* declaration */
+pre .dec {
+    color: var(--base0C)
+}
+
+/* literal */
+pre .lit,
+pre a {
+    color: var(--base09)
+}
+
+/* punctuation */
+pre .pun {
+    color: var(--base04)
+}
+
+pre .opn,
+pre .clo {
+    color: var(--base0F)
+}
+
+/* variable */
+pre .var {
+    color: var(--base08)
+}
+
+/* html/xml tag */
+pre .tag {
+    color: var(--base08)
+}
+
+/* html/xml attribute name */
+pre .atn {
+    color: var(--base0D)
+}
+
+/* html/xml attribute value */
+pre .atv {
+    color: var(--base09)
+}
+
+/* Markup Italic */
+pre i,
+pre em {
+    color: var(--base0E)
+}
+
+/* Markup Bold */
+pre b,
+pre strong {
+    color: var(--base0A)
+}
+
+/* Markup Quotes */
+pre q,
+pre blockquote {
+    color: var(--base0C);
+}
+
+/* Diff Inserted */
+pre ins {
+    color: var(--base0B);
+}
+
+/* Diff Deleted */
+pre del {
+    color: var(--base08);
+}
+
+/* Diff Changed */
+pre mark {
+    background-color: var(--base0E);
+    color: var(--base00);
+}
