@@ -1,0 +1,63 @@
+<!--
+
+Summary: Flatboard 3 is somewhat Spaghetti Code.
+
+The uncomfortable point:
+- Hook points must be named in the specified way: "pluginsID_HookPointName($passed_parameters) ", where "passed_parameters" can be array to support multiple parameters at the same time, but...
+  - Usually passed arguments are `$topicEntry['trip']` or `$replyEntry['trip']`.
+  - You can indeed create your own hook points (e.g. "Plugin::hook('user_menu_item') " to add menu items to the user menu in your theme), but almost exclusively for your own use (don't expect others to hook code in your hook points)
+    - This leads to increased difficulty in interworking between plugins
+- I personally don't think the HTMLForm class is easy to use, so I wrote a few myself;
+- PLUGIN_DIR refers to the **absolute path** on disk, if you want a relative path (for URLs), you need to use str_replace (PATH_ROOT, getCurrentUrl (), PLUGIN_DIR), and:
+  - In config.php, use './plugin/till_base16_colorscheme/view/css/theme-base16.css' to load correctly
+  - iframe in config.php, use '../../plugin/till_base16_colorscheme/view/css/theme-base16.css' to load correctly
+    - getCurrentUrl function is a function to get the current URL, because the URL format of flatboard is confusing: "http://localhost/flatboard/config.php/plugin/till_base16_colorscheme" may not be correct
+- In hook function, when you want to use global variables or other data, you need to define a bunch of `global`s first;
+- If you want to write plugins code well, it is best to put it in a separate file in the include method, and declare the global variable in advance before including
+- function `till_base16_colorscheme_config`, it corresponds to the HTML of the page in the "Config" button of the corresponding plugins in the config plugins list . According to the original usage, it should be:
+  ```
+  $out = HTMLForm::form(
+    action: 'config.php' . DS . 'plugin' . DS . $plugin,
+    controls: HTMLForm::checkBox() . HTMLForm::select() . HTMLForm::simple_submit()等等
+  );
+  return $out;
+  ```
+  But this can only deal with simple settings items. Once there is a customized demand, such as rich text or a reusable flatboard build-in editor, you have to start handwriting HTML.
+    - Yes, the `controls` parameter can be written in HTML, further increasing the "Spaghetti Code" level
+    - The language(translations) mechanism uses global variables, and there is no function fallback (see my implementation). If you accidentally forget to write a key, the whole program will stall (even if there is no problem with the function).
+- The key name in the translation, such as' $lang [$plugin. 'name'] ', although it is reasonable to write, the key will actually be "till_base16_colorschemename"... I'm speechless...
+
+We look forward to whether there will be any improvement in the future.
+
+总结：Flatboard 3 是Spaghetti Code。
+
+难受的点：
+- Hook点必须要用指定的命名方式：“插件ID_Hook点名称($传入的参数)”，其中`传入的参数`可以是array来支持同时传入多个参数进去，但……
+  - 通常被传入的参数是`$topicEntry['trip']`或`$replyEntry['trip']`
+  - 你确实可以创造自己的Hook点（例如`Plugin::hook('user_menu_item')`用于在自己主题里的用户菜单添加菜单项），但几乎只能给自己使用（别指望别人能为你的Hook点加代码）
+  - 这导致插件之间的互通难度增加
+    - 例如我做了个Notification插件，我希望在帖子被回复的时候触发`Plugin::hook('send_notification', ['to' => $topicEntry['trip'], 'message' => '有人回复了你的帖子'])`来给指定的收件人发送通知，我可以直接hook类似的地方实现
+    - 但别的插件呢？除非我在哪个地方发布了详尽的文档，否则不太可能发送通知了。
+- HTMLForm类我个人感觉并不是很好用（纯粹是口味问题），所以我自己写了几个；
+- PLUGIN_DIR 指的是在磁盘上的绝对路径，如果要相对路径（用于URL）的话需要用 str_replace(PATH_ROOT, getCurrentUrl(), PLUGIN_DIR)，而且要注意：
+  - 在config.php里，要用`./plugin/till_base16_colorscheme/view/css/theme-base16.css`才能正确加载
+  - 在config.php里的iframe，要用`../../plugin/till_base16_colorscheme/view/css/theme-base16.css`才能正确加载
+  - getCurrentUrl函数是用来获取当前URL的函数，因为flatboard的URL格式有迷惑性：`http://localhost/flatboard35/config.php/plugin/till_base16_colorscheme`导致不一定能取对
+- Hook机制，想要使用全局变量或者其他的数据的时候，需要先定义一堆global；
+  - 导致如果你要好好写插件代码，最好用include方式放在单独的文件里，在include之前也要提前声明好global变量
+- till_base16_colorscheme_config，对应的是后台插件列表中对应插件的“Config”按钮里的页面HTML（仅需这个函数返回的内容是HTML），按照原本的用法，应该是：
+  ```
+  $out = HTMLForm::form(
+    action: 'config.php' . DS . 'plugin' . DS . $plugin,
+    controls: HTMLForm::checkBox() . HTMLForm::select() . HTMLForm::simple_submit()等等
+  );
+  return $out;
+  ```
+  但这样只能应对简单的设置项，一旦有自定义的需求，如富文本或者是复用flatboard内置的编辑器，就得开始手写HTML
+    - 是的，controls参数可以写HTML，进一步增加“Spaghetti Code”程度
+- 语言机制用的是全局变量，还没有函数兜底（见我的实现），如果不小心忘了写某个键的话会导致整个程序停滞（即使功能没问题）
+- 翻译里的键名，例如`$lang[$plugin.'name']`这样的，虽然写起来合理但实际上这个键会是“till_base16_colorschemename”……无语……
+
+我们共同期待未来会不会有改善。
+
+-->
