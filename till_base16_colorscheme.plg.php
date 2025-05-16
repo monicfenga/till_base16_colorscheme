@@ -2,33 +2,33 @@
 /**
  * Base16 Color scheme adapter
  *
- * @author 		Tillreetree
- * @copyright	2025 Tillreetree
- * @license		http://opensource.org/licenses/MIT
- * @package		FlatBoard
- * @version		1.0.0
- * @update		2025-05-13
+ * @author         Tillreetree
+ * @copyright      2025 Tillreetree
+ * @license        http://opensource.org/licenses/MIT
+ * @package        FlatBoard
+ * @version        1.0.2
+ * @update         2025-05-15
  */
 
 /*=============================================
-=                   定义变量                   =
+=                   Définition variables                   =
 =============================================*/
 
 $BASE16_ALL_COLOR_SCHEMES = [];
 
 $BASE16_ALL_COLOR_SCHEMES += include_once(PLUGIN_DIR . 'till_base16_colorscheme' . DS . 'view/css/base16/_get_all.php');
 
-/*============  End of 定义变量  =============*/
+/*============  End of Définition variables  =============*/
 
 /*=============================================
-=                   实用函数                   =
+=                   Fonctions utilitaires                   =
 =============================================*/
 
 /**
- * Base16 颜色选择器
- * @param string $id 输入框的name
- * @param int|string $current 当前选择项
- * @return string
+ * Sélecteur de couleur Base16
+ * @param string $id ID du champ de formulaire
+ * @param int|string $current Valeur actuellement sélectionnée
+ * @return string HTML du sélecteur
  */
 function form_b16_color_selector($id = '', $current = '0') {
     $r = '<div class="b16-color-selector">';
@@ -44,24 +44,22 @@ function form_b16_color_selector($id = '', $current = '0') {
 }
 
 /**
- * Base16 配色方案选择器
- * @param string $id 输入框的name
- * @param int|string $current 当前选择项
- * @return string
+ * Sélecteur de schéma de couleur Base16
+ * @param string $id ID du champ de formulaire
+ * @param int|string $current Valeur actuellement sélectionnée
+ * @return string HTML du sélecteur
  */
 function form_b16_color_scheme_selector($id = '', $current = 'default-dark') {
     global $BASE16_ALL_COLOR_SCHEMES;
     $r = '<div class="b16-color-scheme-selector">';
     foreach ($BASE16_ALL_COLOR_SCHEMES as $key => $value) {
-
-
         $new_key = str_replace(['base16-', '.css'], ['', ''], $key);
         $this_checked = $current === $new_key ? ' checked ' : '';
         $this_label_add = '';
 
         $r .= '<input type="radio" name="' . $id . '" value="' . $new_key . '" class="b16-color-scheme-input" id="' . $id . '--' . $new_key . '" ' . $this_checked . '>
         <label for="' . $id . '--' . $new_key . '" class="b16-color-scheme-button">
-        <img src="./' . $value['image'] . '" alt="' . $value['label'] . '" loading="lazy">
+        <img src="' . HTML_BASEPATH . DS . $value['image'] . '" alt="' . $value['label'] . '" loading="lazy">
         ' . $this_label_add . ' ' . $value['label'] . '
         </label>';
     }
@@ -69,30 +67,53 @@ function form_b16_color_scheme_selector($id = '', $current = 'default-dark') {
 
     return $r;
 }
+
+/**
+ * Récupère la valeur d'une clé de langue
+ * @param string $key Clé de langue
+ * @return string Valeur traduite ou placeholder si non trouvée
+ */
 function lang($key = '') {
     global $lang;
     return isset($lang[$key]) ? $lang[$key] : 'lang[' . $key . ']';
 }
 
+/**
+ * Récupère l'URL courante du site
+ * @return string URL base
+ */
 function getCurrentUrl() {
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
     $host = $_SERVER['HTTP_HOST'];
 
-    // 获取脚本所在目录路径（不包含PATH_INFO）
+    // Récupère le chemin du répertoire du script (sans PATH_INFO)
     $scriptDir = dirname($_SERVER['SCRIPT_NAME']);
 
-    // 确保路径以斜杠结尾
+    // Assure que le chemin se termine par un slash
     $basePath = rtrim($scriptDir, '/');
 
-    // 构建完整URL
+    // Construit l'URL complète
     return $protocol . '://' . $host . $basePath;
 }
 
+/**
+ * Génère un bouton radio Oui/Non
+ * @param string $name Nom du champ
+ * @param int $checked Valeur sélectionnée par défaut
+ * @return string HTML des boutons radio
+ */
 function form_radio_yes_no($name, $checked = 0) {
     $checked = intval($checked);
     return form_radio($name, array(1 => lang('yes'), 0 => lang('no')), $checked);
 }
 
+/**
+ * Génère des boutons radio à partir d'un tableau d'options
+ * @param string $name Nom du champ
+ * @param array $arr Options sous forme clé => valeur
+ * @param mixed $checked Valeur sélectionnée par défaut
+ * @return string HTML des boutons radio
+ */
 function form_radio($name, $arr, $checked = 0) {
     empty($arr) && $arr = array(lang('no'), lang('yes'));
     $s = '';
@@ -104,6 +125,14 @@ function form_radio($name, $arr, $checked = 0) {
     return $s;
 }
 
+/**
+ * Génère un menu déroulant
+ * @param string $name Nom du champ
+ * @param array $arr Options sous forme clé => valeur
+ * @param mixed $checked Valeur sélectionnée par défaut
+ * @param bool|string $id ID du champ
+ * @return string HTML du menu déroulant
+ */
 function form_select($name, $arr, $checked = 0, $id = TRUE) {
     if (empty($arr)) return '';
     $idadd = $id === TRUE ? "id=\"$name\"" : ($id ? "id=\"$id\"" : '');
@@ -113,6 +142,12 @@ function form_select($name, $arr, $checked = 0, $id = TRUE) {
     return $s;
 }
 
+/**
+ * Génère les options d'un menu déroulant
+ * @param array $arr Options sous forme clé => valeur
+ * @param mixed $checked Valeur sélectionnée par défaut
+ * @return string HTML des options
+ */
 function form_options($arr, $checked = 0) {
     $s = '';
     foreach ((array)$arr as $k => $v) {
@@ -122,7 +157,15 @@ function form_options($arr, $checked = 0) {
     return $s;
 }
 
-function form_textarea($name, $value, $width = FALSE,  $height = FALSE) {
+/**
+ * Génère un champ de texte multiligne
+ * @param string $name Nom du champ
+ * @param string $value Contenu initial
+ * @param bool|string $width Largeur du champ
+ * @param bool|string $height Hauteur du champ
+ * @return string HTML du champ
+ */
+function form_textarea($name, $value, $width = FALSE, $height = FALSE) {
     $style = '';
     if ($width !== FALSE) {
         is_numeric($width) and $width .= 'px';
@@ -133,23 +176,25 @@ function form_textarea($name, $value, $width = FALSE,  $height = FALSE) {
     return $s;
 }
 
-/*============  End of 实用函数  =============*/
+/*============  End of Fonctions utilitaires  =============*/
 
 
 /*=============================================
-=                   业务代码                   =
+=                   Code métier                   =
 =============================================*/
 
-
-
-
+/**
+ * Installation du plugin
+ * Appelé automatiquement lors de l'activation du plugin
+ * @return void
+ */
 function till_base16_colorscheme_install() {
     $plugin = 'till_base16_colorscheme';
     global $BASE16_ALL_COLOR_SCHEMES;
 
-    // Check if the plugin is already installed
+    // Vérifie si le plugin est déjà installé
     if (flatDB::isValidEntry('plugin', $plugin)) {
-        return; // If the plugin is already installed, do nothing
+        return; // Si le plugin est déjà installé, ne rien faire
     }
 
     $BASE16_BEST_COLOR_SCHEME_PAIRS = [
@@ -255,84 +300,129 @@ function till_base16_colorscheme_install() {
         'b16_switch_to_light_time' => '07:00',
         'b16_inject_location' => 'body_start',
         'b16_custom_css' => '',
-
     );
 
-    flatDB::saveEntry('plugin', $plugin, $settings);
+    try {
+        // Sauvegarde les réglages dans un fichier de données spécifique au plugin
+        $dataPath = Plugin::getPluginDBPath($plugin);
+        flatDB::saveEntry('plugin', $plugin, $settings);
+    } catch (InvalidArgumentException $e) {
+        // Gestion des erreurs
+        error_log("Erreur lors de l'installation du plugin $plugin: " . $e->getMessage());
+    }
 }
+
+/**
+ * Configuration du plugin
+ * Appelé par Flatboard lors de l'accès à la page de configuration
+ * @return string HTML de la page de configuration
+ */
 function till_base16_colorscheme_config() {
     /*=============================================
-    =                   准备                   =
+    =                   Préparation                   =
     =============================================*/
     global $lang, $token, $BASE16_ALL_COLOR_SCHEMES;
 
     $plugin = 'till_base16_colorscheme';
     $FORM_ACTION = 'config.php' . DS . 'plugin' . DS . $plugin;
-    if (flatDB::isValidEntry('plugin', $plugin)) {
-        $settings = flatDB::readEntry('plugin', $plugin);
-    }
-    $SettingPageHTML = '';
-
-    /*============  End of 准备  =============*/
-
-    if (!empty($_POST) && CSRF::check($token)) {
-        /* POST REQUEST
-        -------------------------------------------------- */
-
-        $settings['b16_color_mode'] = $_POST['b16_color_mode'] ?? '';
-        $settings['b16_show_color_mode_switch'] = $_POST['b16_show_color_mode_switch'] ?? false;
-        $settings['b16_switch_to_dark_time'] = $_POST['b16_switch_to_dark_time'] ?? '';
-        $settings['b16_switch_to_light_time'] = $_POST['b16_switch_to_light_time'] ?? '';
-        $settings['b16_inject_location'] = $_POST['b16_inject_location'] ?? '';
-        $settings['b16_custom_css'] = htmlspecialchars($_POST['b16_custom_css']) ?? '';
-        foreach ($_POST['light_mode'] as $key => $value) {
-            $settings['light_mode'][$key] = $value;
+    
+    try {
+        // Récupère les paramètres du plugin
+        if (flatDB::isValidEntry('plugin', $plugin)) {
+            $settings = flatDB::readEntry('plugin', $plugin);
+        } else {
+            // Si le plugin n'est pas encore configuré, l'installer maintenant
+            till_base16_colorscheme_install();
+            $settings = flatDB::readEntry('plugin', $plugin);
         }
-        foreach ($_POST['dark_mode'] as $key => $value) {
-            $settings['dark_mode'][$key] = $value;
+        
+        $SettingPageHTML = '';
+
+        /*============  End of Préparation  =============*/
+
+        if (!empty($_POST) && CSRF::check($token)) {
+            /* REQUÊTE POST
+            -------------------------------------------------- */
+
+            $settings['b16_color_mode'] = $_POST['b16_color_mode'] ?? '';
+            $settings['b16_show_color_mode_switch'] = $_POST['b16_show_color_mode_switch'] ?? false;
+            $settings['b16_switch_to_dark_time'] = $_POST['b16_switch_to_dark_time'] ?? '';
+            $settings['b16_switch_to_light_time'] = $_POST['b16_switch_to_light_time'] ?? '';
+            $settings['b16_inject_location'] = $_POST['b16_inject_location'] ?? '';
+            $settings['b16_custom_css'] = htmlspecialchars($_POST['b16_custom_css']) ?? '';
+            
+            foreach ($_POST['light_mode'] as $key => $value) {
+                $settings['light_mode'][$key] = $value;
+            }
+            
+            foreach ($_POST['dark_mode'] as $key => $value) {
+                $settings['dark_mode'][$key] = $value;
+            }
+            
+            $settings['light_mode']['b16_color_scheme_href'] = $BASE16_ALL_COLOR_SCHEMES['base16-' . $settings['light_mode']['b16_color_scheme'] . '.css']['href'];
+            $settings['dark_mode']['b16_color_scheme_href'] = $BASE16_ALL_COLOR_SCHEMES['base16-' . $settings['dark_mode']['b16_color_scheme'] . '.css']['href'];
+
+            // Sauvegarde des paramètres
+            flatDB::saveEntry('plugin', $plugin, $settings);
+
+            // Affiche un message de confirmation avec redirection
+            $SettingPageHTML .= Plugin::redirectMsg(
+                $lang['data_save'],
+                'config.php' . DS . 'plugin' . DS . $plugin,
+                $lang['plugin'] . '&nbsp;<b>' . $lang[$plugin . 'name'] . '</b>'
+            );
+
+            /* Fin de REQUÊTE POST
+            -------------------------------------------------- */
+        } else {
+            /* REQUÊTE GET
+            -------------------------------------------------- */
+
+            $SettingPageHTML .= include_once(PLUGIN_DIR . $plugin . DS . 'setting.php');
+
+            /* Fin de REQUÊTE GET
+            -------------------------------------------------- */
         }
-        $settings['light_mode']['b16_color_scheme_href'] = $BASE16_ALL_COLOR_SCHEMES['base16-' . $settings['light_mode']['b16_color_scheme'] . '.css']['href'];
-        $settings['dark_mode']['b16_color_scheme_href'] = $BASE16_ALL_COLOR_SCHEMES['base16-' . $settings['dark_mode']['b16_color_scheme'] . '.css']['href'];
-
-        // 保存设置
-        flatDB::saveEntry('plugin', $plugin, $settings);
-
-        // 显示保存成功消息
-        $SettingPageHTML .= Plugin::redirectMsg(
-            $lang['data_save'],
-            'config.php' . DS . 'plugin' . DS . $plugin,
-            $lang['plugin'] . '&nbsp;<b>' . $lang[$plugin . 'name'] . '</b>'
-        );
-
-        /* End of POST REQUEST
-        -------------------------------------------------- */
-    } else {
-        /* GET REQUEST
-        -------------------------------------------------- */
-
-        $SettingPageHTML .= include_once(PLUGIN_DIR . $plugin . DS . 'setting.php');
-
-        /* End of GET REQUEST
-        -------------------------------------------------- */
+    } catch (Exception $e) {
+        // Gestion des erreurs avec message d'erreur approprié
+        $SettingPageHTML = '<div class="alert alert-danger"><strong>Erreur:</strong> ' . $e->getMessage() . '</div>';
     }
 
     return $SettingPageHTML;
 }
 
+/**
+ * Hook exécuté avant le chargement principal
+ * Utilisé pour charger les assets CSS/JS nécessaires
+ * @return void
+ */
 function till_base16_colorscheme_beforeMain() {
-    global $out;
-    $plugin = 'till_base16_colorscheme';
-    include_once(PLUGIN_DIR . $plugin . DS . 'hook' . DS . 'beforeMain.php');
-}
-function till_base16_colorscheme_footerJS() {
-    global $out;
-    $plugin = 'till_base16_colorscheme';
-    include_once(PLUGIN_DIR . $plugin . DS . 'hook' . DS . 'footerJS.php');
-}
-function till_base16_colorscheme_head() {
-    global $out;
-    $plugin = 'till_base16_colorscheme';
-    include_once(PLUGIN_DIR . $plugin . DS . 'hook' . DS . 'head.php');
+    if (Plugin::isValidHook('beforeMain', 'till_base16_colorscheme')) {
+        $plugin = 'till_base16_colorscheme';
+        include_once(PLUGIN_DIR . $plugin . DS . 'hook' . DS . 'beforeMain.php');
+    }
 }
 
-/*============  End of 业务代码  =============*/
+/**
+ * Hook exécuté pour ajouter du JavaScript en pied de page
+ * @return void
+ */
+function till_base16_colorscheme_footerJS() {
+    if (Plugin::isValidHook('footerJS', 'till_base16_colorscheme')) {
+        $plugin = 'till_base16_colorscheme';
+        include_once(PLUGIN_DIR . $plugin . DS . 'hook' . DS . 'footerJS.php');
+    }
+}
+
+/**
+ * Hook exécuté dans la section head de la page
+ * @return void
+ */
+function till_base16_colorscheme_head() {
+    if (Plugin::isValidHook('head', 'till_base16_colorscheme')) {
+        $plugin = 'till_base16_colorscheme';
+        include_once(PLUGIN_DIR . $plugin . DS . 'hook' . DS . 'head.php');
+    }
+}
+
+/*============  End of Code métier  =============*/

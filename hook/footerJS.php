@@ -1,4 +1,5 @@
 <?php defined('FLATBOARD') or die('Flatboard Community.');
+global $out;
 // 如果是管理页面，就不应用插件了
 if ($out['self'] === 'config') {
     return;

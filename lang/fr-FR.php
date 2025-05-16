@@ -1,0 +1,85 @@
+<?php
+/************* Infos Plugin REQUIS! ***************/
+$lang[$plugin.'name']         = 'Adaptateur de schéma de couleurs Base16';
+$lang[$plugin.'version']      = '1.0.0';
+$lang[$plugin.'update']       = '2025-05-13';
+$lang[$plugin.'author']       = 'Tillreetree';
+$lang[$plugin.'author_site']  = '#';
+$lang[$plugin.'author_mail']  = '1136678471@qq.com';
+$lang[$plugin.'description']  = "Un cadre de couleurs simple et cohérent donnera à votre thème Bootstrap d'origine un nouveau look !";
+/************* Config Plugin ***************/ 
+$lang = array_merge($lang, [
+    'theme_helper_welcome' => "Bienvenue dans l'assistant de thème Base16",
+    'theme_helper_prompt' => "Que souhaitez-vous ajuster ?",
+    'light_mode_colors' => "Couleurs du mode clair",
+    'dark_mode_colors' => "Couleurs du mode sombre",
+    'plugin_settings' => "Paramètres du plugin",
+    'menu_hint' => "Cliquez sur '≡' dans le coin inférieur gauche de l'écran pour afficher le menu principal.",
+    'save_reminder' => "N'oubliez pas d'appuyer sur le bouton retour pour enregistrer vos réglages après modification.",
+    'save_settings' => "Enregistrer les paramètres",
+    'back' => "Retour",
+    'light_mode' => "Mode clair",
+    'dark_mode' => "Mode sombre",
+    'choose_colorscheme' => "Choisir un jeu de couleurs",
+    'custom_colors' => "Couleurs personnalisées",
+    'page_section' => "Page",
+    'page_bg_color' => "Couleur de fond de la page",
+    'page_bg_desc' => "La couleur d'arrière-plan de l'ensemble de la page",
+    'container_bg_color' => "Couleur de fond du conteneur",
+    'container_bg_desc' => "Couleur de fond des cartes et autres conteneurs principaux",
+    'text_color' => "Couleur du texte",
+    'text_color_desc' => "Couleur du texte normal",
+    'contrast' => "Contraste",
+    'emphasis_text_color' => "Couleur du texte en évidence",
+    'emphasis_text_desc' => "Utilisée pour les titres, les éléments de menu actifs, etc.",
+    'secondary_text_color' => "Couleur du texte secondaire",
+    'secondary_text_desc' => "Utilisée pour certaines informations secondaires",
+    'selected_text_bg' => "Couleur de fond du texte sélectionné",
+    'selected_text_hint' => "Veuillez vous référer à l'effet visuel réel",
+    'selected_text_color' => "Couleur du texte sélectionné",
+    'nav_section' => "Navigation",
+    'enable_nav_color' => "Activer le contrôle des couleurs de la barre de navigation ?",
+    'nav_bg_color' => "Couleur de fond de la barre de navigation",
+    'nav_text_color' => "Couleur du texte de la barre de navigation",
+    'primary_section' => "Principal",
+    'primary_recommend' => "Recommandé : choisissez votre couleur préférée",
+    'bg_color' => "Couleur de fond",
+    'secondary_section' => "Secondaire",
+    'secondary_recommend' => "Recommandé : choisissez un ton gris",
+    'info_section' => "Information",
+    'info_recommend' => "Recommandé : choisissez aqua ou cyan",
+    'success_section' => "Succès",
+    'success_recommend' => "Recommandé : choisissez le vert",
+    'warning_section' => "Avertissement",
+    'warning_recommend' => "Recommandé : choisissez le jaune ou l'orange",
+    'danger_section' => "Danger",
+    'danger_recommend' => "Recommandé : choisissez le jaune ou le rouge",
+    'settings_title' => "Paramètres de l'assistant Base16",
+    'auto_switch' => "Basculer automatiquement entre les thèmes ?",
+    'default_mode' => "Mode par défaut",
+    'auto_mode' => "Automatique (sélection selon l'heure)",
+    'first_visit_mode' => "Thème à utiliser lors de la première visite du site",
+    'show_toggle_button' => "Afficher un bouton de changement de mode ?",
+    'toggle_button_desc' => "Si vous sélectionnez 'Oui', un bouton sera affiché dans un coin de la page pour permettre aux utilisateurs de changer de mode facilement.",
+    'dark_mode_time' => "À quelle heure activer le mode <b>Sombre</b> ?",
+    'dark_mode_hint' => "Recommandé : après 18h00",
+    'light_mode_time' => "À quelle heure activer le mode <b>Clair</b> ?",
+    'light_mode_hint' => "Recommandé : vers 7h00",
+    'custom_css' => "CSS personnalisé",
+    'custom_css_placeholder' => "Entrez votre CSS personnalisé",
+    'other_settings' => "Autres paramètres",
+    'injection_position' => "Position d'injection du thème",
+    'head_position' => "Au début de la page (/head)",
+    'body_position' => "À la fin de la page (/body)",
+    'injection_desc' => "Par défaut : 'Au début de la page' ; choisir 'À la fin de la page' peut améliorer la compatibilité.",
+    'knowledge_title' => "Le saviez-vous ?",
+    'contrast_levels' => "Niveaux de contraste",
+    'contrast_info' => "Dans les WCAG 2.0, les niveaux de contraste des couleurs sont divisés en trois catégories : Niveau A, AA et AAA. Des niveaux plus élevés indiquent un contraste plus fort et un impact visuel plus important :
+    <br>Niveau A (rapport de contraste 3:1 - minimum acceptable pour la plupart des utilisateurs)
+    <br>Niveau AA (rapport de contraste 4,5:1 - minimum acceptable pour les personnes ayant une légère déficience visuelle)
+    <br>Niveau AAA (rapport de contraste 7:1 - minimum acceptable pour les personnes malvoyantes)",
+    'about_title' => "À propos de l'assistant de thème Base16",
+    'author' => "Auteur",
+    'thanks' => "Remerciements",
+]);
+?>
